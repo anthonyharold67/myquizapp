@@ -1,7 +1,7 @@
 from .base import *
 
-DEBUG = False
-# DEBUG = True  # Lokalde denenmek istendiğinde True yapılmalı
+# DEBUG = False
+DEBUG = True  
 
 ALLOWED_HOSTS = ['*']
 INSTALLED_APPS += ['corsheaders']
