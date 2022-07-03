@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'drf_yasg',
     'rest_framework.authtoken',
     'dj_rest_auth',
+    'corsheaders',
     
     #my apps
     "users",
@@ -53,6 +54,8 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [  
     'django.middleware.security.SecurityMiddleware',
+    "corsheaders.middleware.CorsMiddleware",
+    "django.middleware.common.CommonMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -142,3 +145,12 @@ REST_AUTH_SERIALIZERS = {
     'TOKEN_SERIALIZER': 'users.serializers.CustomTokenSerializer',
 }
 
+CORS_ALLOW_ALL_ORIGINS=True
+CORS_ALLOW_METHODS = [
+    "DELETE",
+    "GET",
+    "OPTIONS",
+    "PATCH",
+    "POST",
+    "PUT",
+]

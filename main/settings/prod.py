@@ -4,11 +4,10 @@ from .base import *
 DEBUG = True  
 
 ALLOWED_HOSTS = ['*']
-INSTALLED_APPS += ['corsheaders']
+
 
 MIDDLEWARE += [
-    "corsheaders.middleware.CorsMiddleware",
-    "django.middleware.common.CommonMiddleware",
+    
     'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
@@ -77,15 +76,7 @@ LOGGING = {
 
 
 
-CORS_ALLOW_ALL_ORIGINS=True
-CORS_ALLOW_METHODS = [
-    "DELETE",
-    "GET",
-    "OPTIONS",
-    "PATCH",
-    "POST",
-    "PUT",
-]
+
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 django_heroku.settings(locals())
